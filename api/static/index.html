@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Outbreak Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦠 Disease Outbreak Prediction</h1>
+            <p class="subtitle">LSTM Model for Predicting New Cases</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Input Data</h2>
+                <p class="info">Enter 30 consecutive days of new cases data</p>
+                
+                <div class="input-options">
+                    <button id="loadSampleBtn" class="btn btn-secondary">Load Sample Data</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear All</button>
+                    <label for="csvFile" class="btn btn-secondary">Upload CSV</label>
+                    <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                </div>
+
+                <div class="data-input-container">
+                    <div id="dataInputs" class="data-inputs"></div>
+                </div>
+
+                <div class="input-summary">
+                    <span id="inputCount">0</span> / 30 values entered
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="predictBtn" class="btn btn-primary" disabled>
+                    <span id="predictBtnText">Make Prediction</span>
+                    <span id="loadingSpinner" class="spinner" style="display: none;"></span>
+                </button>
+            </div>
+
+            <div id="resultSection" class="result-section" style="display: none;">
+                <h2>Prediction Result</h2>
+                <div class="result-card">
+                    <div class="result-value">
+                        <span class="result-label">Predicted New Cases:</span>
+                        <span id="predictedValue" class="result-number">-</span>
+                    </div>
+                    <div class="result-message" id="resultMessage"></div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by LSTM Deep Learning Model</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
